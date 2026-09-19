@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>С днём рождения, госпожа 💜</title>
+  <meta name="description" content="Маленький подарок для госпожи">
+  <style>
+    :root{
+      --white:#fffdfb; --cream:#f5efe4; --green:#dcebdc; --green2:#b9d6bd;
+      --ink:#33413a; --purple:#8b6b9e; --purple2:#c8b3d5; --pink:#efb6c8;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; color:var(--ink); background:
+      radial-gradient(circle at 10% 10%, #ffffff 0 18%, transparent 19%),
+      linear-gradient(135deg,var(--white),var(--green) 52%,var(--cream));
+      font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+      overflow-x:hidden;
+    }
+    .noise{position:fixed;inset:0;pointer-events:none;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 160 160' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+    .wrap{width:min(1080px,92%);margin:auto}
+    .hero{min-height:100vh;display:grid;place-items:center;padding:42px 0;position:relative}
+    .hero-card{
+      width:min(900px,100%); text-align:center; padding:54px 28px;
+      background:rgba(255,255,255,.78); backdrop-filter:blur(16px);
+      border:1px solid rgba(139,107,158,.16); border-radius:36px;
+      box-shadow:0 24px 80px rgba(75,70,62,.14);
+      animation:rise 1s ease both;
+    }
+    .mini{letter-spacing:.18em;text-transform:uppercase;font-size:.78rem;color:#7c8f80}
+    h1{font-size:clamp(3rem,10vw,6.8rem);line-height:.9;margin:18px 0 14px;color:var(--purple);font-weight:900}
+    .sub{font-size:clamp(1.05rem,2.6vw,1.4rem);max-width:650px;margin:auto;line-height:1.6}
+    .heart{display:inline-block;animation:pulse 1.7s infinite}
+    .btn{
+      display:inline-flex;align-items:center;gap:9px;margin-top:30px;padding:15px 24px;
+      border:0;border-radius:999px;background:var(--purple);color:#fff;font-weight:800;
+      cursor:pointer;box-shadow:0 10px 28px rgba(139,107,158,.25);transition:.2s;
+    }
+    .btn:hover{transform:translateY(-3px);box-shadow:0 14px 32px rgba(139,107,158,.3)}
+    section{padding:85px 0}
+    .title{text-align:center;font-size:clamp(2rem,6vw,3.5rem);margin:0 0 14px;color:var(--purple)}
+    .lead{text-align:center;max-width:680px;margin:0 auto 38px;line-height:1.7}
+    .letter{
+      background:#fff;border-radius:30px;padding:34px clamp(22px,5vw,55px);
+      box-shadow:0 18px 55px rgba(75,70,62,.11);border:1px solid #eee7df;
+      font-size:1.12rem;line-height:1.9;position:relative
+    }
+    .letter:before{content:"💌";position:absolute;right:24px;top:-19px;font-size:34px}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .photo{
+      aspect-ratio:1/1;overflow:hidden;border-radius:24px;background:#fff;
+      box-shadow:0 12px 35px rgba(75,70,62,.12);transition:.35s;cursor:pointer
+    }
+    .photo:nth-child(2),.photo:nth-child(5){transform:translateY(22px)}
+    .photo:hover{transform:translateY(-6px) rotate(1deg) scale(1.02)}
+    .photo img{width:100%;height:100%;object-fit:cover}
+    .wish-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .wish{background:rgba(255,255,255,.72);padding:28px;border-radius:25px;text-align:center;border:1px solid rgba(139,107,158,.1)}
+    .wish b{display:block;font-size:1.1rem;margin-bottom:8px;color:var(--purple)}
+    .final{
+      min-height:70vh;display:grid;place-items:center;text-align:center;
+      background:linear-gradient(180deg,transparent,#ffffffb8)
+    }
+    .final h2{font-size:clamp(2.5rem,8vw,5rem);color:var(--purple);margin:0}
+    .signature{margin-top:22px;font-size:1.1rem}
+    .petal{position:fixed;top:-30px;z-index:5;pointer-events:none;animation:fall linear forwards;font-size:20px}
+    #surprise{display:none;margin:24px auto 0;max-width:560px;padding:20px;border-radius:20px;background:var(--green);font-weight:650}
+    footer{text-align:center;padding:35px;color:#7b887f;font-size:.9rem}
+    @keyframes rise{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+    @keyframes pulse{50%{transform:scale(1.18)}}
+    @keyframes fall{to{transform:translate3d(var(--drift),110vh,0) rotate(540deg);opacity:.2}}
+    @media(max-width:720px){
+      .hero-card{padding:42px 18px;border-radius:28px}
+      .gallery{grid-template-columns:repeat(2,1fr)}
+      .wish-grid{grid-template-columns:1fr}
+      .photo:nth-child(2),.photo:nth-child(5){transform:none}
+      section{padding:62px 0}
+    }
+  </style>
+</head>
+<body>
+<div class="noise"></div>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-card">
+      <div class="mini">маленький подарок для тебя</div>
+      <h1>госпожа <span class="heart">💜</span></h1>
+      <p class="sub">С днём рождения! Пусть сегодня будет много улыбок, тёплых моментов и всего того, что делает тебя счастливой.</p>
+      <button class="btn" onclick="openGift()">🎁 Открыть подарок</button>
+      <div id="surprise">А вот и главный сюрприз: этот сайт я сделал специально для тебя.<br><br>Не зря я на айтишника иду?) ❤️‍🩹</div>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2 class="title">Немного от меня 💌</h2>
+    <p class="lead">Не хотелось просто написать пару слов в сообщении, поэтому пришлось немного поколдовать с кодом.</p>
+    <div class="letter">
+      <p><b>госпожа, с днём рождения! 💜</b></p>
+      <p>Желаю тебе побольше счастливых дней, искренних улыбок и людей рядом, с которыми можно быть собой. Пусть всё, о чём ты мечтаешь, постепенно становится реальностью, а каждый новый день приносит что-нибудь хорошее.</p>
+      <p>Спасибо за все наши смешные, странные и просто хорошие моменты. Надеюсь, этот маленький подарок хотя бы немного поднимет тебе настроение.</p>
+      <p>И да... <b>не зря я на айтишника иду?) ❤️‍🩹</b></p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="title">Твои вайбы ✨</h2>
+    <p class="lead">Я собрал здесь картинки, которые просто идеально подходят под настроение этого подарка.</p>
+    <div class="gallery">
+      <div class="photo"><img src="assets/photo1.jpg" alt="Иллюстрация"></div>
+      <div class="photo"><img src="assets/photo2.jpg" alt="Иллюстрация"></div>
+      <div class="photo"><img src="assets/photo3.jpg" alt="Иллюстрация"></div>
+      <div class="photo"><img src="assets/photo4.jpg" alt="Иллюстрация"></div>
+      <div class="photo"><img src="assets/photo5.jpg" alt="Иллюстрация"></div>
+      <div class="photo"><img src="assets/photo6.jpg" alt="Иллюстрация"></div>
+      <div class="photo"><img src="assets/photo7.jpg" alt="Иллюстрация"></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2 class="title">Пусть сбудется 💚</h2>
+    <div class="wish-grid">
+      <div class="wish"><b>🌱 Побольше счастья</b>Чтобы поводов улыбаться становилось только больше.</div>
+      <div class="wish"><b>✨ Побольше чудес</b>Чтобы хорошие сюрпризы находили тебя сами.</div>
+      <div class="wish"><b>💜 И просто кайфа</b>От жизни, людей, моментов и каждого нового дня.</div>
+    </div>
+  </div>
+</section>
+
+<section class="final">
+  <div class="wrap">
+    <div class="mini">ещё раз</div>
+    <h2>С днём рождения,<br>госпожа! 💜</h2>
+    <p class="signature">Сделано с теплом, немного кода и огромным количеством старания.</p>
+    <button class="btn" onclick="celebrate()">🎉 Ещё немного магии</button>
+  </div>
+</section>
+
+<footer>© Твой персональный подарок · 2026</footer>
+
+<script>
+function openGift(){
+  document.getElementById('surprise').style.display='block';
+  celebrate(24);
+  document.getElementById('surprise').scrollIntoView({behavior:'smooth',block:'center'});
+}
+function celebrate(count=35){
+  const emojis=['💜','🤍','🌿','✨','🎀','💚'];
+  for(let i=0;i<count;i++){
+    const p=document.createElement('div');
+    p.className='petal';
+    p.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    p.style.left=Math.random()*100+'vw';
+    p.style.setProperty('--drift',(Math.random()*240-120)+'px');
+    p.style.animationDuration=(3+Math.random()*3)+'s';
+    p.style.fontSize=(14+Math.random()*18)+'px';
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),6500);
+  }
+}
+</script>
+</body>
+</html>
